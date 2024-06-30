@@ -6,6 +6,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  padding: 10vh 10vw;
   background-color: #f4f4f4;
 }
 
@@ -89,13 +90,3 @@ textarea {
   display: block;
 }
 
-/* Styles for the footer */
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #f1f1f1;
-  text-align: center;
-  padding: 10px 0;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-}
