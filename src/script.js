@@ -114,8 +114,9 @@ function updateCharCount() {
 function copyTable() {
   const textarea = document.getElementById("tableContent");
   textarea.select();
-  //   document.execCommand("copy");
-  copyTextToClipboard(textarea.textContent);
+  document.execCommand("copy");
+  // TODO: implement this (not working for now)
+  // copyTextToClipboard(textarea.textContent);
 }
 
 function updateTable() {
@@ -183,22 +184,22 @@ function createDropdownMenu() {
   dropdownContent.classList.add("dropdown-content");
   dropdownContent.id = "myDropdown";
 
-//   const links = ["Link 1", "Link 2", "Link 3"];
-//   links.forEach((linkText) => {
-//     const link = document.createElement("a");
-//     link.href = "#";
-//     link.textContent = linkText;
-//     dropdownContent.appendChild(link);
-//   });
+  //   const links = ["Link 1", "Link 2", "Link 3"];
+  //   links.forEach((linkText) => {
+  //     const link = document.createElement("a");
+  //     link.href = "#";
+  //     link.textContent = linkText;
+  //     dropdownContent.appendChild(link);
+  //   });
 
   for (const [key, value] of Object.entries(templates)) {
     const link = document.createElement("a");
     link.href = "#";
     link.textContent = key;
     link.onclick = () => {
-        table = value;
-        updateTable()
-    }
+      table = value;
+      updateTable();
+    };
     dropdownContent.appendChild(link);
   }
 
@@ -241,17 +242,34 @@ window.onclick = function (event) {
 // utils
 
 function copyTextToClipboard(text) {
+    // the solutions below does not seem to work
+
+
   // Use the asynchronous Clipboard API
-  navigator.clipboard
-    .writeText(text)
-    .then(() => {
-      console.log("Text copied to clipboard");
-      // Optionally, you can provide user feedback here
-    })
-    .catch((err) => {
-      console.error("Failed to copy text: ", err);
-      // Handle errors here
-    });
+  // navigator.clipboard
+  //   .writeText(text)
+  //   .then(() => {
+  //     console.log("Text copied to clipboard");
+  //     // Optionally, you can provide user feedback here
+  //   })
+  //   .catch((err) => {
+  //     console.error("Failed to copy text: ", err);
+  //     // Handle errors here
+  //   });
+
+  if (!navigator.clipboard) {
+    // use old commandExec() way
+    document.execCommand("copy");
+  } else {
+    navigator.clipboard
+      .writeText(text)
+      .then(function () {
+        console.log("Text copied to clipboard");
+      })
+      .catch(function () {
+        console.error("Failed to copy text: ", err);
+      });
+  }
 }
 
 /* set up */
