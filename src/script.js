@@ -130,7 +130,7 @@ function updateTable() {
 
     // Iterate over the cells in the row data
     rowData.forEach((cellData, colIndex) => {
-      cell = document.createElement("td");
+      const cell = document.createElement("td");
       cell.setAttribute("contenteditable", true);
 
       // Set the cell's text content
@@ -139,9 +139,10 @@ function updateTable() {
       // Append the cell to the row
 
       // update content
-      cell.addEventListener("input", () => {
+      cell.addEventListener("input", function (event) {
         // TODO: add to undo stack
-        table[rowIndex][colIndex] = row.textContent;
+        table[rowIndex][colIndex] = cell.textContent;
+        console.log(`new text = ${table[rowIndex][colIndex]}`);
       });
       // add to undo/redo stack
       /*   cell.addEventListener("blur", () => {
@@ -160,12 +161,6 @@ function updateTable() {
   const parent = oldHTMLTable.parentNode;
 
   parent.replaceChild(newHTMLTable, oldHTMLTable);
-}
-
-/* TEMPLATES */
-function applyTemplate() {
-  table = spanishSubjetsTemplate;
-  updateTable();
 }
 
 /* DROP DOWN MENU STUFF --- START */
@@ -242,8 +237,7 @@ window.onclick = function (event) {
 // utils
 
 function copyTextToClipboard(text) {
-    // the solutions below does not seem to work
-
+  // the solutions below does not seem to work
 
   // Use the asynchronous Clipboard API
   // navigator.clipboard
