@@ -1,0 +1,7 @@
+{
+    "port": 3000,
+    "files": ["./src/**/*.{html,js,css}", "./dist/*.css"],
+    "server": {
+      "baseDir": "./src"
+    }
+  }

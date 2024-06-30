@@ -1,0 +1,17 @@
+{
+  "name": "table_as_text",
+  "version": "1.0.0",
+  "description": "A simple website that can be used to create a table and copy it in a nice format to be posted in chats and whatnot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run lite",
+    "lite": "lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
