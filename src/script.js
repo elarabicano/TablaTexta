@@ -13,8 +13,8 @@ table
 */
 // initial table
 let table = [
-  ["1234", ""],
-  ["", "12345"],
+  ["", ""],
+  ["", ""],
 ];
 
 // TODO add a clear/reset botton
