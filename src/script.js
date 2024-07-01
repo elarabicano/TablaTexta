@@ -1,7 +1,3 @@
-// script.js
-let undoStack = [];
-let redoStack = [];
-
 /* 
 
 table
@@ -64,15 +60,6 @@ function deleteColumn() {
   }
 }
 
-function undo() {
-  // todo
-  console.log("TBD");
-}
-function redo() {
-  // todo
-  console.log("TBD");
-}
-
 function generateTable() {
   //   const table = document.getElementById("Table");
   let tableContent = "";
@@ -89,10 +76,14 @@ function generateTable() {
   // fill the content and padd it
   table.forEach((row) => {
     row.forEach((content, index) => {
-      tableContent += content.padEnd(columnsWidth[index], "_");
+      content = content.trim();
       if (index != row.length - 1) {
+        tableContent += content.padEnd(columnsWidth[index], " ");
         tableContent += " | ";
+      } else {
+        tableContent += content;
       }
+      // tableContent = tableContent.replace(/\u0020{6}/g, "\t");
     });
     // TODO do not add new line at the end
     tableContent += "\n";
@@ -307,3 +298,17 @@ const templates = {
   "Spanish Ser": spanishSer,
   "Spanish Estar": spanishEstar,
 };
+
+const helloTalkVoiceRoomChatCharLimit = 150;
+
+// TODO: redo/undo
+let undoStack = [];
+let redoStack = [];
+function undo() {
+  // todo
+  console.log("TBD");
+}
+function redo() {
+  // todo
+  console.log("TBD");
+}
