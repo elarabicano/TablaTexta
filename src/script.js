@@ -162,7 +162,7 @@ function createDropdownMenu() {
 
   const button = document.createElement("button");
   button.classList.add("dropbtn");
-  button.textContent = "Select Template";
+  button.textContent = "Templates";
   button.onclick = toggleDropdown;
   dropdown.appendChild(button);
 
@@ -190,7 +190,7 @@ function createDropdownMenu() {
   }
 
   dropdown.appendChild(dropdownContent);
-  document.getElementById("dropdownPlaceholder").appendChild(dropdown);
+  document.getElementById("topButtons").prepend(dropdown);
 }
 
 function toggleDropdown() {

@@ -6,21 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table to Text</title>
     <link rel="stylesheet" href="./src/style.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+
 </head>
 
 <body>
     <div class="container">
         <h1>Table to Text</h1>
-        <!-- <div class="controls">
-            <button onclick="undo()">Undo</button>
-            <button onclick="redo()">Redo</button>
-        </div> -->
+
         <br>
         <div class="controls">
 
-            <div id="dropdownPlaceholder"></div>
-            <button onclick="clearTable()"> Reset</button>
-            <div></div>
+            <div id="topButtons">
+                <button onclick="clearTable()"> Reset</button>
+            </div>
             <button onclick="deleteRow()"> - Row</button>
             <button onclick="deleteColumn()"> - Column</button>
             <div></div>
@@ -42,7 +41,7 @@
         <button onclick="generateTable()">Generate Table</button>
         <br>
         <!-- readonly -->
-        <textarea id="tableContent" readonly></textarea> 
+        <textarea id="tableContent" readonly></textarea>
         <div id="charCount">Character count: 0</div>
         <br>
         <button onclick="copyTable()">Copy Table</button>
