@@ -292,11 +292,20 @@ let spanishEstar = [
   ["vosotros", "estáis"],
   ["ellos", "están"],
 ];
+let pronombresIndirectos = [
+  ["yo", "Me"],
+  ["tú", "Te"],
+  ["él/ella/usted", "Le"],
+  ["nosotros/as", "nos"],
+  ["vosotros/as", "os"],
+  ["ellos/as", "les"],
+];
 
 const templates = {
   "Spanish Subjects": spanishSubjetsTemplate,
   "Spanish Ser": spanishSer,
   "Spanish Estar": spanishEstar,
+  "Pronombres Indirectos": pronombresIndirectos,
 };
 
 const helloTalkVoiceRoomChatCharLimit = 150;
