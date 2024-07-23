@@ -298,7 +298,7 @@ let pronombresIndirectos = [
   ["él/ella/usted", "Le"],
   ["nosotros/as", "nos"],
   ["vosotros/as", "os"],
-  ["ellos/as", "les"],
+  ["ellos/as/usteds", "les"],
 ];
 
 const templates = {
